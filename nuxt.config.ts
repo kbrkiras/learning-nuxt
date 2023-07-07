@@ -1,12 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindForms from '@tailwindcss/forms';
 export default defineNuxtConfig({
+  modules: ['@nuxtjs/tailwindcss'],
   devtools: { enabled: true },
   css: [
     '@/assets/css/main.css',
   ],
   postcss: {
     plugins: {
-      tailwindcss: {},
+      tailwindcss: {
+        tailwindForms
+      },
       autoprefixer: {},
     },
   }
