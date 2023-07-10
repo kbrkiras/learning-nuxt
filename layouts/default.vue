@@ -82,11 +82,11 @@ function switchMenu(menu:SidebarInterface){
               <li>
                 <ul role="list" class="-mx-2 space-y-1">
                   <li v-for="menu in menus" :key="menu.menu" @click="switchMenu(menu)">
-                    <a href="#" class="text-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold" :class="{'bg-indigo-700':selectedMenu===menu}">
+                    <NuxtLink :to="menu.path" class="text-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold" :class="{'bg-indigo-700':selectedMenu===menu}">
                       <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-indigo-400 bg-indigo-500 text-[0.625rem] font-medium text-white">  {{ menu.menu[0].toUpperCase() }}</span>
                       <span class="truncate">  {{ menu.menu }}</span>
                 
-                   </a>
+                   </NuxtLink>
                   </li>
                 </ul>
               </li>
@@ -109,10 +109,11 @@ function switchMenu(menu:SidebarInterface){
           <li>
             <ul role="list" class="-mx-2 space-y-1">
               <li v-for="menu in menus" :key="menu.menu" @click="switchMenu(menu)">
-                    <a href="#" class="text-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold" :class="{'bg-indigo-700':selectedMenu===menu}">
+                <NuxtLink :to="menu.path" class="text-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold" :class="{'bg-indigo-700':selectedMenu===menu}">
                       <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-indigo-400 bg-indigo-500 text-[0.625rem] font-medium text-white">  {{ menu.menu[0].toUpperCase() }}</span>
-                      <span class="truncate">  {{ menu.menu }}</span>                
-                   </a>
+                      <span class="truncate">  {{ menu.menu }}</span>
+                
+                   </NuxtLink>
                   </li>
             </ul>
           </li>          
